@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent First Product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow glow-one"></div>
+    <div class="bg-glow glow-two"></div>
+
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand-mark">A</div>
+        <div>
+          <div class="eyebrow">未来のプロダクト体験</div>
+          <div class="brand-name">Agent First Product</div>
+        </div>
+      </div>
+      <div class="topbar-tag">MENU から ASK へ</div>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="tagline">The future is not a menu.</p>
+          <h1>機能を選ぶ時代から、目標を伝える時代へ</h1>
+          <p class="subtitle">
+            旧来の MENU 型のUIと、AIエージェントに依頼する新しい体験を同じ目的で比較します。
+            ここでユーザーは「機能のリスト」ではなく、「成果」を頼る体験を直感的に理解できます。
+          </p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-label">今回の比較テーマ</div>
+          <div class="hero-card-title">営業提案書を作る</div>
+          <div class="hero-card-meta">
+            <span>従来</span>
+            <span class="divider">→</span>
+            <span>AIエージェント</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="comparison-grid">
+        <article class="panel panel-legacy">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">旧世代</p>
+              <h2>MENU 型</h2>
+            </div>
+            <div class="badge red">クリック中心</div>
+          </div>
+
+          <div class="menu-stack">
+            <button class="legacy-btn active" data-label="新規作成">
+              <span>新規作成</span>
+              <span class="arrow">→</span>
+            </button>
+            <button class="legacy-btn" data-label="分析">
+              <span>分析</span>
+              <span class="arrow">→</span>
+            </button>
+            <button class="legacy-btn" data-label="レポート">
+              <span>レポート</span>
+              <span class="arrow">→</span>
+            </button>
+            <button class="legacy-btn" data-label="改善提案">
+              <span>改善提案</span>
+              <span class="arrow">→</span>
+            </button>
+            <button class="legacy-btn" data-label="共有">
+              <span>共有</span>
+              <span class="arrow">→</span>
+            </button>
+            <button class="legacy-btn" data-label="設定">
+              <span>設定</span>
+              <span class="arrow">→</span>
+            </button>
+          </div>
+
+          <div class="legacy-output">
+            <div class="mini-label">現在の選択</div>
+            <div id="legacySelection" class="selection-text">新規作成</div>
+            <p>
+              目的を機能に変換し、ユーザーが手作業で選ぶ必要があります。
+            </p>
+          </div>
+        </article>
+
+        <article class="panel panel-agent">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">新世代</p>
+              <h2>Ask で始める</h2>
+            </div>
+            <div class="badge green">AIエージェント</div>
+          </div>
+
+          <div class="prompt-box">
+            <div class="prompt-header">
+              <span class="prompt-pill">Goal</span>
+              <span class="prompt-hint">何をしたいですか？</span>
+            </div>
+            <textarea id="agentInput" rows="4">営業提案書を作って。競合比較と投資対効果の見積もりを入れて、重要なポイントは3つにまとめて。</textarea>
+            <div class="sample-prompts">
+              <button class="sample-btn">営業提案書を作って</button>
+              <button class="sample-btn">顧客向けの改善案を出して</button>
+              <button class="sample-btn">今月の実績を要約して</button>
+            </div>
+            <button id="runAgentBtn" class="primary-btn">エージェントを開始</button>
+          </div>
+
+          <div class="agent-workflow">
+            <div class="mini-label">進行中の作業</div>
+            <div id="workflowList" class="workflow-list"></div>
+          </div>
+
+          <div class="output-card">
+            <div class="mini-label">成果物</div>
+            <div id="resultBox" class="result-box">
+              <p class="result-header">提案書ドラフト</p>
+              <h3>AIエージェントが目的達成に向けて作業を進めています</h3>
+              <p>
+                1. 顧客の背景と課題を整理<br />
+                2. 競合比較で差別化ポイントを明確化<br />
+                3. 投資対効果と導入ロードマップを提示
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
